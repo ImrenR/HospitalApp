@@ -7,9 +7,19 @@ import { patientsData, doctorData } from '../data';
 const Home = () => {
   const [doctors, setDoctors] = useState(doctorData);
   const [patients, setPatients] = useState(patientsData);
+  const [magic, setMagic] = useState(true)
 
-  return (
-    <div style={{display:"block"}}>
+  const doctorClick = (dId)=>{
+  
+    setDoctors(doctors.filter((k)=>k.id===dId))
+
+  setMagic(false)
+
+  setPatients(patients.filter((a)=> a.myDoctor===doctors[0].doctorName))
+ }
+
+  return ( 
+    <div style={{display: magic ? "block" : "flex"}}>
      <div>
        <header>
         <h1>HOSPITAL OF PORTO</h1>
@@ -21,14 +31,19 @@ const Home = () => {
             width="160px" 
             height="190px"
             className='doctorBtn'
-            alt=""/>
-            <h4>{dr.doctorName}</h4>
+            alt=""
+            style = {{background: magic ? "white": "lightgreen"}}
+            onClick={()=>doctorClick(dr.id)}/> 
+            <h4 style={{background: magic ? "white": "lightgreen", borderLeft: `5px solid ${magic ? "lightblue" : "lightgreen"} `}}>
+          {dr.doctorName}</h4>
           </div>
        </div>
           ))}
          </div>
        </header>
-         <AddPatient/>
+
+        {!magic && <AddPatient patients={patients} setPatients={setPatients}/> }
+
         </div>
          <PatientList patients={patients} setPatients={setPatients}/>
     </div>

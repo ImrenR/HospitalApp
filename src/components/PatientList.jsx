@@ -7,7 +7,7 @@ const PatientList = ({patients, setPatients}) => {
  {patients.map((hasta)=>(
  <div> 
  <div className= {hasta.isDone ===true ? "trueStil" : "falseStyle"}
-    onDoubleClick={()=>setPatients(patients.map((a)=>a.id===hasta.id ? {...hasta,isDone:false}:a))}
+    onDoubleClick={()=>setPatients(patients.map((a)=>a.id===hasta.id ? {...hasta,isDone: !a.isDone}:a))}
  >
    <div>
      <h2>{hasta.patientName}</h2>
