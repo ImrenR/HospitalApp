@@ -1,42 +1,125 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1 {
   text-align: center;
+  color: #130c0c;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #54739f, #bdccdf);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  margin: 3rem auto;
+  max-width: 950px;
+  padding: 2rem;
+  border: 2px solid rgb(8, 68, 111);
+  border-radius: 5px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  margin: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.doctorBtn {
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.dr {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  .doctorCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .nameDr {
+    background-color: #cdd5d8;
+    text-align: center;
+    width: 135px;
+    margin: 0.38rem;
+    border-radius: 6px;
+    overflow: hidden;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 2. sayfadaki kayıt oluştur butonu */
+.kayitBtn {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #25ad69;
+  width: 300px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #6a0707;
+  border-radius: 50px;
 }
 
-.card {
-  padding: 2em;
+.form-control {
+  margin: 20px 0;
 }
 
-.read-the-docs {
-  color: #888;
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  padding: 1rem;
+  font-size: 17px;
+  border-radius: 5px;
+  border: none;
+}
+
+/*! data daki isDone kısmı false iken görünecek stil */
+.falseStyle {
+  display: flex;
+  justify-content: space-between;
+
+  background-image: url("https://img.freepik.com/free-vector/watercolor-background_220290-15.jpg?w=2000");
+
+  background-size: cover;
+  background-position: center center;
+  margin: 5px;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.falseStyle h2 {
+  color: green;
+}
+.falseStyle h3 {
+  color: #152bbb;
+}
+/*! data daki isDone kısmı true iken görünecek stil */
+.trueStil {
+  display: flex;
+  justify-content: space-between;
+  border-left: 10px solid #2037b9;
+  background-color: #5dd5f9;
+  padding: 10px 20px;
+}
+
+.trueStil h3,
+.trueStil h2 {
+  text-decoration: line-through;
+  color: blue;
+}
+.doctorBtn + h4 {
+  padding: 10px 20px;
+  /* doctorBtn className li img den sonraki h4 doktor isimleri */
 }
