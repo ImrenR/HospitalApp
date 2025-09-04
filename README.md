@@ -16,6 +16,12 @@ A simple React + Vite application for managing hospital appointments. Users can 
 
 ---
 
+## Demo
+
+[View](https://github.com/user-attachments/assets/6f0b0837-afa4-417f-8d0b-782bb2cd1285)
+
+[View](https://github.com/user-attachments/assets/36eeab21-25f8-4262-bb2c-4f709971a760)
+
 ## Project Structure
 
 ```Hospital-App/
