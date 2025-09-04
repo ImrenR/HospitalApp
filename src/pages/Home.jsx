@@ -32,7 +32,7 @@ const Home = () => {
         {/* <AddPatient /> */}
       </div>
 
-      <PatientList patients={patients}/>
+      <PatientList patients={patients} setPatients={setPatients}/>
     </div>
   );
 };

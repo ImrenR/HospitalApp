@@ -1,6 +1,6 @@
 import { FaTimesCircle } from "react-icons/fa";
 
-const PatientList = ({ patients }) => {
+const PatientList = ({ patients, setPatients }) => {
   return (
     <div>
       {patients.map((hasta) => (
@@ -11,7 +11,11 @@ const PatientList = ({ patients }) => {
               <h4>{hasta.day}</h4>
               <h3>{hasta.myDoctor}</h3>
             </div>
-            <FaTimesCircle />
+            <FaTimesCircle 
+            
+            onClick={(a)=>setPatients(patients.filter((b)=> b.id != hasta.id))}
+            
+            />
           </div>
         </div>
       ))}
