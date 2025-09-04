@@ -5,8 +5,15 @@ const PatientList = ({ patients, setPatients }) => {
     <div>
       {patients.map((hasta) => (
         <div>
-          <div className={hasta.isDone ? "trueStil" : "falseStyle"} 
-          onDoubleClick={()=> setPatients(patients.map((a)=>a.id === hasta.id ? {...hasta,isDone:false}:a))}
+          <div
+            className={hasta.isDone ? "trueStil" : "falseStyle"}
+            onDoubleClick={() =>
+              setPatients(
+                patients.map((a) =>
+                  a.id === hasta.id ? { ...hasta, isDone: !a.isDone } : a
+                )
+              )
+            }
           >
             <div>
               <h2>{hasta.patientName}</h2>
