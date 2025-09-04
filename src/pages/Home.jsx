@@ -41,8 +41,8 @@ const Home = () => {
             ))}
           </div>
         </header>
-
-        {/* <AddPatient /> */}
+        {!magic && <AddPatient />}
+        
       </div>
 
       <PatientList patients={patients} setPatients={setPatients} />
