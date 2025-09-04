@@ -32,7 +32,7 @@ const Home = () => {
         {/* <AddPatient /> */}
       </div>
 
-      <PatientList />
+      <PatientList patients={patients}/>
     </div>
   );
 };

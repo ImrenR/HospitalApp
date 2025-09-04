@@ -21,7 +21,7 @@ body {
   margin: 3rem auto;
   max-width: 950px;
   padding: 2rem;
-  border: 2px solid rgb(213, 227, 236);
+  border: 2px solid rgb(22, 106, 158);
  
   border-radius: 5px;
 }
@@ -92,9 +92,7 @@ body {
 .falseStyle {
   display: flex;
   justify-content: space-between;
-
-  background-image: url("https://img.freepik.com/free-vector/watercolor-background_220290-15.jpg?w=2000");
-
+  background-color: #bdccdf;
   background-size: cover;
   background-position: center center;
   margin: 5px;
@@ -105,7 +103,7 @@ body {
   color: green;
 }
 .falseStyle h3 {
-  color: #152bbb;
+  color: #104a9b;
 }
 /*! data daki isDone kısmı true iken görünecek stil */
 .trueStil {
