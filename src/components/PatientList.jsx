@@ -5,16 +5,18 @@ const PatientList = ({ patients, setPatients }) => {
     <div>
       {patients.map((hasta) => (
         <div>
-          <div className={hasta.isDone ? "trueStil" : "falseStyle"}>
+          <div className={hasta.isDone ? "trueStil" : "falseStyle"} 
+          onDoubleClick={()=> setPatients(patients.map((a)=>a.id === hasta.id ? {...hasta,isDone:false}:a))}
+          >
             <div>
               <h2>{hasta.patientName}</h2>
               <h4>{hasta.day}</h4>
               <h3>{hasta.myDoctor}</h3>
             </div>
-            <FaTimesCircle 
-            
-            onClick={(a)=>setPatients(patients.filter((b)=> b.id !== hasta.id))}
-            
+            <FaTimesCircle
+              onClick={(a) =>
+                setPatients(patients.filter((b) => b.id !== hasta.id))
+              }
             />
           </div>
         </div>
