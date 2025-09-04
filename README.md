@@ -1,18 +1,30 @@
-## Hospital Appointment System
+# Porto Care Hospital – Appointment Management App
 
-A simple React + Vite application for managing hospital appointments. Users can add patients, view the patient list, and navigate through different pages.
+A simple **React + Vite** hospital appointment management app where you can view doctors, see their patients, and create new appointments.  
+This project was built to practice **React fundamentals**, **state management**, and **dynamic rendering**.
 
 ---
 
-## Features
+## 🚀 Features
 
-. Add new patients with basic information (name, age, assigned doctor).
+✅ View a list of doctors with profile images  
+✅ Filter patients by selected doctor  
+✅ Add new patients dynamically with a form  
+✅ Simple UI with gradient background and clean layout  
+✅ Conditional styling based on appointment status (`isDone`)  
+✅ Icons with `react-icons`  
+✅ Built using **Vite** for a fast development experience  
 
-. View a list of patients in the hospital system.
+---
 
-. Client-side routing with React Router for smooth navigation.
+## Tech Stack
 
-. Modular component-based structure for maintainability.
+- **React** (Hooks, Components, Props, JSX)
+- **Vite** (Build tool)
+- **JavaScript (ES6+)**
+- **CSS3** (Flexbox, gradients, conditional styles)
+- **React Icons** for UI icons
+- **uuid** for unique patient IDs
 
 ---
 
