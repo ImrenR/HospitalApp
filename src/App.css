@@ -7,7 +7,7 @@
 }
 h1 {
   text-align: center;
-  color: #130c0c;
+  color: #0d5585;
   font-weight: 900;
   margin-bottom: 30px;
 }
@@ -21,7 +21,8 @@ body {
   margin: 3rem auto;
   max-width: 950px;
   padding: 2rem;
-  border: 2px solid rgb(8, 68, 111);
+  border: 2px solid rgb(213, 227, 236);
+ 
   border-radius: 5px;
 }
 
@@ -44,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   }
   .nameDr {
     background-color: #cdd5d8;
