@@ -29,7 +29,7 @@ const Home = () => {
           </div>
         </header>
 
-        <AddPatient />
+        {/* <AddPatient /> */}
       </div>
 
       <PatientList />
