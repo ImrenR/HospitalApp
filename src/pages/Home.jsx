@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import PatientList from "../components/PatientList";
 import AddPatient from "../components/AddPatient";
 import { hastaData, doctorData } from "../helper/Data";
@@ -9,9 +9,10 @@ const Home = () => {
   const [magic, setMagic] = useState(true);
 
   const doctorClick = (dId) => {
-    setDoctors(doctors.filter((b) => b.id == dId));
+    doctors = doctors.filter((b) => b.id == dId);
+    setDoctors(doctors);
     setMagic(false);
-    setPatients(patients.filter((a)=>a.myDoctor === doctors[0].doctorName))
+    setPatients(patients.filter((c)=>c.myDoctor === doctors[0].doctorName))
   };
 
   return (
@@ -42,7 +43,7 @@ const Home = () => {
             ))}
           </div>
         </header>
-        {!magic && <AddPatient patients={patients} setPatients={setPatients}/>}
+        {!magic && <AddPatient patients={patients} setPatients={setPatients} doctors={doctors}/>}
         
       </div>
 
