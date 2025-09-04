@@ -5,7 +5,7 @@ const PatientList = ({ patients }) => {
     <div>
       {patients.map((hasta) => (
         <div>
-          <div className={hasta.isDone === true ? "trueStil" : "falseStyle"}>
+          <div className={hasta.isDone ? "trueStil" : "falseStyle"}>
             <div>
               <h2>{hasta.patientName}</h2>
               <h4>{hasta.day}</h4>
