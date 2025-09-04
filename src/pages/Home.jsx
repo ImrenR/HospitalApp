@@ -7,6 +7,11 @@ const Home = () => {
   const [doctors, setDoctors] = useState(doctorData);
   const [patients, setPatients] = useState(hastaData);
 
+const [magic, setMagic] = useState(true)
+
+const doctorClick=(dId)=>{
+ setDoctors(doctors.filter((b)=>b.id == dId))
+}
   return (
     <div style={{ display: "block" }}>
       <div>
@@ -21,6 +26,7 @@ const Home = () => {
                 width="160px"
                 height="220px"
                 className="doctorBtn"
+                onClick={()=>doctorClick(dr.id)}
                 />
 
                 <h4 className="nameDr">{dr.doctorName}</h4>
@@ -29,7 +35,7 @@ const Home = () => {
           </div>
         </header>
 
-        {/* <AddPatient /> */}
+        <AddPatient />
       </div>
 
       <PatientList patients={patients} setPatients={setPatients}/>
