@@ -1,27 +1,33 @@
 import React, { useState } from "react";
 import uuid from "react-uuid";
-const AddPatient = ({patients, setPatients,doctors}) => {
+const AddPatient = ({ patients, setPatients, doctors }) => {
+  const [isim, setIsim] = useState("");
+  const [tarih, setTarih] = useState("");
 
-const[isim,setIsim]=useState("")
-const[tarih,setTarih]=useState("")
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-   const handleSubmit=(e)=>{
-e.preventDefault()
+    if (!isim || !tarih) {
+      alert("Please enter both name and date");
+      return;
+    }
+    // hastalar dizisinin diğer 6 elemanı dursun, 7. yi ekle işlemini ... ile yapıyoruz, uuid() bize unique id veren bir kütüphane
+    setPatients([
+      ...patients,
+      {
+        id: uuid(),
+        patientName: isim,
+        day: tarih,
+        isDone: false,
+        myDoctor: doctors[0].doctorName,
+      },
+    ]);
 
-// hastalar dizisinin diğer 6 elemanı dursun, 7. yi ekle işlemini ... ile yapıyoruz, uuid() bize unique id veren bir kütüphane
-setPatients([...patients,{
+    setIsim("");
+    setTarih("");
+  };
 
-  id:uuid(),
-  patientName:isim,
-  day:tarih,
-  isDone:false,
-  myDoctor:doctors[0].doctorName
-}])
-
-
-   }
-
-console.log(patients);
+  console.log(patients);
 
   return (
     <div>
@@ -31,21 +37,24 @@ console.log(patients);
           <input
             id="name"
             type="text"
-           onChange={(e)=>setIsim(e.target.value)}
+            value={isim}
+            onChange={(e) => setIsim(e.target.value)}
           />
         </div>
 
         <div className="form-control">
           <label htmlFor=""> Day & Time</label>
           <input
+            id="datetime"
             type="datetime-local"
-          onChange={(e)=>setTarih(e.target.value)}
+            onChange={(e) => setTarih(e.target.value)}
+            value={tarih}
           />
         </div>
 
         <div>
           <button className="kayitBtn" type="submit">
-           Create Appoitment <span>{}</span> 
+            Create Appoitment <span>{}</span>
           </button>
         </div>
       </form>

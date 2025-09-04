@@ -8,11 +8,11 @@ const Home = () => {
   const [patients, setPatients] = useState(hastaData);
   const [magic, setMagic] = useState(true);
 
-  const doctorClick = (dId) => {
-    doctors = doctors.filter((b) => b.id == dId);
-    setDoctors(doctors);
+const doctorClick = (dId) => {
+    const selectedDoctor = doctorData.find((b) => b.id === dId);
+    setDoctors([selectedDoctor]);
     setMagic(false);
-    setPatients(patients.filter((c)=>c.myDoctor === doctors[0].doctorName))
+    setPatients(hastaData.filter((c) => c.myDoctor === selectedDoctor.doctorName));
   };
 
   return (
