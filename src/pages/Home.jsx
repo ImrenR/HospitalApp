@@ -11,6 +11,7 @@ const Home = () => {
   const doctorClick = (dId) => {
     setDoctors(doctors.filter((b) => b.id == dId));
     setMagic(false);
+    setPatients(patients.filter((a)=>a.myDoctor === doctors[0].doctorName))
   };
 
   return (

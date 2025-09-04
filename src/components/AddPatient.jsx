@@ -45,7 +45,7 @@ console.log(patients);
 
         <div>
           <button className="kayitBtn" type="submit">
-           Create Appoitment <span>{ } </span> 
+           Create Appoitment <span>{}</span> 
           </button>
         </div>
       </form>
