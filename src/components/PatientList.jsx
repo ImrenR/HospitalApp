@@ -13,7 +13,7 @@ const PatientList = ({ patients, setPatients }) => {
             </div>
             <FaTimesCircle 
             
-            onClick={(a)=>setPatients(patients.filter((b)=> b.id != hasta.id))}
+            onClick={(a)=>setPatients(patients.filter((b)=> b.id !== hasta.id))}
             
             />
           </div>
